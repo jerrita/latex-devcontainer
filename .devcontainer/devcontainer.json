@@ -1,0 +1,50 @@
+{
+  "name": "LaTeX Development Environment",
+  "image": "ghcr.io/xu-cheng/texlive-full:latest",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "configureZshAsDefaultShell": true,
+      "username": "vscode"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    }
+  },
+  "postCreateCommand": "npm install -g @anthropic-ai/claude-code",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "James-Yu.latex-workshop",
+        "streetsidesoftware.code-spell-checker",
+        "anthropic.claude-code",
+        "andrepimenta.claude-code-chat"
+      ],
+      "settings": {
+        "latex-workshop.latex.tools": [
+          {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+              "-pdf",
+              "-pdflatex=pdflatex -shell-escape -interaction=nonstopmode",
+              "-use-make",
+              "-f",
+              "%DOC%"
+            ]
+          }
+        ],
+        "latex-workshop.latex.recipes": [
+          {
+            "name": "latexmk",
+            "tools": [
+              "latexmk"
+            ]
+          }
+        ],
+        "latex-workshop.view.pdf.viewer": "tab"
+      }
+    }
+  },
+  "remoteUser": "vscode",
+  "workspaceFolder": "/workspace"
+}
