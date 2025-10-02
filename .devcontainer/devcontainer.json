@@ -18,33 +18,8 @@
         "streetsidesoftware.code-spell-checker",
         "anthropic.claude-code",
         "andrepimenta.claude-code-chat"
-      ],
-      "settings": {
-        "latex-workshop.latex.tools": [
-          {
-            "name": "latexmk",
-            "command": "latexmk",
-            "args": [
-              "-pdf",
-              "-pdflatex=pdflatex -shell-escape -interaction=nonstopmode",
-              "-use-make",
-              "-f",
-              "%DOC%"
-            ]
-          }
-        ],
-        "latex-workshop.latex.recipes": [
-          {
-            "name": "latexmk",
-            "tools": [
-              "latexmk"
-            ]
-          }
-        ],
-        "latex-workshop.view.pdf.viewer": "tab"
-      }
+      ]
     }
   },
-  "remoteUser": "vscode",
-  "workspaceFolder": "/workspace"
+  "remoteUser": "vscode"
 }
